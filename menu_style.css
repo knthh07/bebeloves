@@ -1,0 +1,155 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+
+/* General body styling */
+body {
+    font-family: 'Playfair Display', serif; /* Romantic yet elegant font */
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7); /* Soft romantic gradient */
+    color: #b71c1c; /* Deep red for love */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+/* Container for spacing and alignment */
+.container {
+    max-width: 600px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.85); /* Soft transparent white */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 105, 135, 0.3); /* Soft pink glow */
+    border: 3px solid #ff80ab; /* Light pink border */
+}
+
+/* Heading styling */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #b71c1c; /* Romantic deep red */
+    text-shadow: 2px 2px 6px rgba(255, 128, 171, 0.4); /* Soft pink glow */
+}
+
+/* Button styling */
+a {
+    text-decoration: none;
+}
+
+button {
+    background: #ff4d79; /* Vibrant pink */
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(255, 64, 129, 0.4);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect */
+button:hover {
+    background: #e91e63; /* Deeper pink */
+    transform: scale(1.1);
+    box-shadow: 0 8px 14px rgba(233, 30, 99, 0.5);
+}
+
+/* Click effect */
+button:active {
+    transform: scale(1);
+    box-shadow: 0 4px 6px rgba(233, 30, 99, 0.3);
+}
+
+/* Heart animation on hover */
+button::after {
+    content: ' 💕';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 2rem;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+button:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Subtle pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button:hover {
+    animation: pulse 1.5s infinite;
+}
+
+/* Modal styling */
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Modal styling with animation */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+    padding-top: 60px; /* Location of the box */
+    animation: fadeIn 0.3s ease-in-out; /* Fade-in animation */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out; /* Fade-in animation for the image */
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff4d79; /* Vibrant pink */
+    text-decoration: none;
+    cursor: pointer;
+}

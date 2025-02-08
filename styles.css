@@ -1,0 +1,155 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+
+/* General body styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  font-family: 'Playfair Display', serif; /* Romantic yet elegant font */
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft blush overlay effect */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 192, 203, 0.1);
+  z-index: -1;
+  filter: blur(8px);
+}
+
+/* Main container */
+.container {
+  text-align: center;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255, 105, 135, 0.3);
+  border: 3px solid #ff80ab;
+  max-width: 600px;
+}
+
+/* Header text */
+h1 {
+  font-size: 2.8em;
+  color: #b71c1c;
+  text-shadow: 2px 2px 5px rgba(183, 28, 28, 0.3);
+  line-height: 1.4;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.yes-button, .no-button {
+  font-size: 1.5em;
+  padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Yes Button */
+.yes-button {
+  transform-origin: center;
+  transition: all 0.5s ease-in-out; /* Smooth animation */
+}
+
+.yes-button:hover {
+  background-color: #e91e63;
+  transform: scale(1.1);
+  box-shadow: 0px 8px 16px rgba(255, 64, 129, 0.5);
+}
+
+/* No Button */
+.no-button {
+  background-color: #f44336;
+  color: white;
+  box-shadow: 0px 5px 10px rgba(244, 67, 54, 0.3);
+}
+
+.no-button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.1);
+  box-shadow: 0px 8px 16px rgba(244, 67, 54, 0.5);
+}
+
+/* Animated Floating GIF */
+.gif_container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-top: 20px;
+  border: 5px solid #ff80ab;
+  box-shadow: 0px 5px 15px rgba(255, 128, 171, 0.3);
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Heart Confetti Animation for Yes Button */
+@keyframes hearts {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Generate heart elements */
+@keyframes hearts {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.heart {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  border-radius: 50%;
+  animation: hearts 2s ease-out forwards;
+}
+
+.heart:nth-child(odd) {
+  background: #ff80ab;
+}
+.heart:nth-child(even) {
+  background: #ff4081;
+}
+
